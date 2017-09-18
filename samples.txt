@@ -1,0 +1,29 @@
+% Matrices
+
+A = [1 2; 3 4; 5 6]
+
+PP1('>> '); % reset cmd line
+
+% ~= is not equal to !
+
+ones(2.3) %2,3 matrix of all ones
+eye(3) % identity matrix of 3x3 matrix
+
+
+w = -6 + sqrt(10) * (randn(1,10000))
+
+hist(w) %gaussian distribution + histogram
+
+hist(w,50) % for 50 bins, instead of the defualt
+
+length(A) % returns the longest dimension of A
+
+load data.dat % load in dat file
+
+who % display variables in current scope
+% reference the matrix by the file name
+
+save test.oct A % save variable A to a file
+
+A(3,2) % 3rd row, 2nd column
+A(:, 2) % every row of the 2nd column
