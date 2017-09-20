@@ -27,3 +27,65 @@ save test.oct A % save variable A to a file
 
 A(3,2) % 3rd row, 2nd column
 A(:, 2) % every row of the 2nd column
+
+% multiplying vecetors
+
+A .^ 2 % element-wise squaring of A
+A .* B % Vector multiplication
+
+1 ./ A % recipricol of A
+
+A + 1 % element-wise + 1
+
+A ' % A transpose
+
+max(A) % max of matrix
+[val, ind] = max(A) % index as well as the value
+
+find(A < 3) % returns all number less than 3
+
+sum, prod, floor % all what you think
+
+
+% PLOTTING
+t = [0:0.01:0.98]
+y1 = sin(2 * pi * 4 * t)
+plot(t, y1)
+hold on % hold on allows you to plot over another plot
+y2 = cos(2 * pi * 4 * t)
+plot(t, y2, 'r')
+print -dpng 'myplot.png'
+close % closes
+figure(1); plot(t, y1); % plots to figure 1, can do multiple
+imagesc(A) % matrix grid of colors
+% comma chaining commands
+
+for i =1:10,
+	v(i) =2^i;
+end;
+
+i = 1;
+while i <= 5,
+	v(i) = 100;
+	i = i + 1;
+end;
+
+if i == 3,
+	break;
+	end;
+end; % showing how a break statement works
+
+function x = square(y)
+x = y^2; % sample squaring func
+addpath('the_path')
+
+% COST FUNCTION
+
+function J =  cost(X, y, theta)
+m = size(X, 1);
+pred = X * theta;
+sqrErrors = (pred - y) . ^ 2
+
+J = 1/(2*m) * sum(sqrErrors);
+
+
